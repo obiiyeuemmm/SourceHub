@@ -1,0 +1,138 @@
+repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
+
+local LP = game:GetService("Players").LocalPlayer
+local gui = Instance.new("ScreenGui", LP.PlayerGui)
+
+-- FRAME
+local main = Instance.new("Frame", gui)
+main.Size = UDim2.new(0, 320, 0, 220)
+main.Position = UDim2.new(0.5, -160, 0.5, -110)
+main.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+main.BorderSizePixel = 0
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 12)
+
+-- LOGO
+local img = Instance.new("ImageLabel", main)
+img.Size = UDim2.new(0, 50, 0, 50)
+img.Position = UDim2.new(0.05, 0, 0, -25)
+img.BackgroundTransparency = 1
+img.Image = "rbxassetid://76924610417991"
+
+-- TITLE
+local title = Instance.new("TextLabel", main)
+title.Size = UDim2.new(1, 0, 0, 40)
+title.BackgroundTransparency = 1
+title.Text = "Doraemon Hub"
+title.TextScaled = true
+title.TextColor3 = Color3.new(1,1,1)
+
+-- INPUT
+local box = Instance.new("TextBox", main)
+box.Size = UDim2.new(0.8, 0, 0, 35)
+box.Position = UDim2.new(0.1, 0, 0.3, 0)
+box.PlaceholderText = "Nhập key vào đây..."
+box.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", box)
+
+-- BUTTON VERIFY
+local btn = Instance.new("TextButton", main)
+btn.Size = UDim2.new(0.8, 0, 0, 35)
+btn.Position = UDim2.new(0.1, 0, 0.55, 0)
+btn.Text = "XÁC MINH KEY"
+btn.BackgroundColor3 = Color3.fromRGB(0,120,255)
+btn.TextColor3 = Color3.new(1,1,1)
+Instance.new("UICorner", btn)
+
+-- BUTTON DISCORD
+local getkey = Instance.new("TextButton", main)
+getkey.Size = UDim2.new(0.8, 0, 0, 30)
+getkey.Position = UDim2.new(0.1, 0, 0.75, 0)
+getkey.Text = "Lấy key Discord"
+getkey.BackgroundColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", getkey)
+
+local KEY = "Doraemondepzaiii:))"
+
+btn.MouseButton1Click:Connect(function()
+if box.Text == KEY then
+gui:Destroy()
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuemmm/UiiiDoraemon/refs/heads/main/UiiiDoraemon.txt"))()
+
+local Window = Library:CreateWindow({
+    Title = "uoɯǝɐɹoD Hub",
+    Subtitle = "- Tổng Hợp",
+    Image = "rbxassetid://122932159240295"
+})
+
+wait(1)
+
+Library:Notify({
+    Title = "Ui Library",
+    Description = "The UI automatically hides once executed.\nPress the button at the bottom-left of the screen to show the GUI.",
+    Duration = 3
+})
+
+-- TAB
+local Script = Window:AddTab("Blox Fruit")
+local ScriptBloxFruit = Script:AddLeftGroupbox("Script Blox Fruit")
+
+local Night = Window:AddTab("99 Đêm")
+local NightBox = Night:AddLeftGroupbox("Script 99 Đêm")
+
+local BlueLock = Window:AddTab("Blue Lock")
+local BlueLockBox = BlueLock:AddLeftGroupbox("Script Blue Lock")
+
+local Emote = Window:AddTab("Emote người khác thấy")
+local EmoteBox = Emote:AddLeftGroupbox("Script Emote")
+
+-- BLOX FRUIT (FULL BUTTON)
+
+ScriptBloxFruit:AddButton({Title="Redz Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/huy384/redzHub/main/redzHub.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Bacon Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh129150/hack/main/Bloxfruits.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Gravity Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/main/Main.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Quantum Onyx",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/main/QuantumOnyx.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Omg Hub",Callback=function()loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/20f318386e3fbf069ee3fa797cfc9f34.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Zis Banana Premium",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Zis/main/ZisChuoiEng"))()end})
+ScriptBloxFruit:AddButton({Title="Min V5",Callback=function()loadstring(game:HttpGet("https://github.com/LuaCrack/Min/raw/main/MinVnV5"))()end})
+ScriptBloxFruit:AddButton({Title="Banana Premium Fake",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Bubu2k/Rubukaitun/main/banana"))()end})
+ScriptBloxFruit:AddButton({Title="Buff Luck Random",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Ytzeno99/bufflucky/main/LucKyRadomFruit.lua"))()end})
+ScriptBloxFruit:AddButton({Title="HDanh Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/hdanhvip/hdanhhub/refs/heads/main/BananaHub.lua.txt"))()end})
+ScriptBloxFruit:AddButton({Title="Teddy Hop Server",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/main/TEDDYHUB-FREEMIUM"))()end})
+ScriptBloxFruit:AddButton({Title="Rubu V6",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/RUBU/refs/heads/main/RUBUV6.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Hop Server",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/vinh129150/hack/main/HopBoss.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Auto Nhặt Trái + Hop",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-NightMystic/Collect-fruits-/main/Hop%20fruit"))()end})
+ScriptBloxFruit:AddButton({Title="PVP",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Kamui:/Kamui1-/Kamui6",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/AdminKamui.luau"))()end})
+
+-- LONGHIHI + EXTRA
+
+ScriptBloxFruit:AddButton({Title="longhihi",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/Devs-LongHiHiV2/refs/heads/main/MainV2.txt"))()end})
+ScriptBloxFruit:AddButton({Title="longhihiv4.1",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/Devs-LongHiHiV4.1.0/refs/heads/main/MainV4.1.0"))()end})
+ScriptBloxFruit:AddButton({Title="longhihi auto chest",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/Auto-Chest/refs/heads/main/MainV1.Luau"))()end})
+ScriptBloxFruit:AddButton({Title="longhihi tổng hợp",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/TongHopMain/refs/heads/main/main.lua"))()end})
+ScriptBloxFruit:AddButton({Title="6_7 hub tổng hợp",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/67HubDev/all/refs/heads/main/67hub.vn.lua"))()end})
+ScriptBloxFruit:AddButton({Title="Maru fake by longhihi",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/MaruHubV1/refs/heads/main/MainV1.Lua"))()end})
+ScriptBloxFruit:AddButton({Title="Orange Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/HieuDepTrai-Z/Dev_Orange/refs/heads/main/OrangeHub.lua"))()end})
+ScriptBloxFruit:AddButton({Title="NaNaHub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/NaNacuti/nanabeo/refs/heads/main/NaNaTVHub.lua"))()end})
+ScriptBloxFruit:AddButton({Title="AnDepZai Hub",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/refs/heads/main/AnDepZaiHubBeta.lua"))()end})
+
+-- 99 ĐÊM
+NightBox:AddButton({Title="Elysium99nights",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/0jayz0/Elysium99nights/main/source.lua"))()end})
+
+-- BLUE LOCK
+BlueLockBox:AddButton({Title="Omg Hub Blue Lock",Callback=function()loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-OMG-Hub-29091"))()end})
+BlueLockBox:AddButton({Title="Điều khiển bóng",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/r4mpage4/LuaCom/refs/heads/main/ControlBall.rivals"))()end})
+BlueLockBox:AddButton({Title="XZuyaX-Key:SHWGay",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/XZuuyaX/XZuyaX-s-Hub/refs/heads/main/Main.Lua", true))()end})
+
+-- EMOTE
+EmoteBox:AddButton({Title="Emote Fake Ngkhac thấy",Callback=function()loadstring(game:HttpGet("https://raw.githubusercontent.com/7yd7/Hub/refs/heads/Branch/GUIS/Emotes.lua"))()end})
+
+else
+box.Text = "Sai key!"
+end
+end)
+
+getkey.MouseButton1Click:Connect(function()
+setclipboard("https://discord.gg/JKMKRKC7")
+end)

